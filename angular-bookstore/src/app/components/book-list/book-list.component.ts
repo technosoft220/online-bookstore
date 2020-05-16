@@ -4,19 +4,24 @@ import { BookService } from "src/app/services/book.service";
 
 @Component({
   selector: "app-book-list",
-  templateUrl: "./book-list.component.html",
+ // templateUrl: "./book-list.component.html",
+  templateUrl: "./book-grid.component.html",
   styleUrls: ["./book-list.component.css"],
 })
 export class BookListComponent implements OnInit {
   books: Book[];
 
-  constructor(private bookService: BookService) {}
+  constructor(private _bookService: BookService) {}
 
   ngOnInit() {
-    this.getBookList;
+    this.listBooks();
   }
 
-  getBookList() {
-    this.bookService.getBooks().subscribe((data) => (this.books = data));
+  listBooks() {
+    this._bookService.getBooks().subscribe(
+      data => {
+        this.books = data;
+      }
+    )
   }
 }

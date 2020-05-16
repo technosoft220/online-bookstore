@@ -2,7 +2,7 @@ export class Book {
   sku: string;
   name: string;
   description: string;
-  unitePrice: number;
+  unitPrice: number;
   imageUrl: string;
   active: boolean;
   unitsInStock: number;
